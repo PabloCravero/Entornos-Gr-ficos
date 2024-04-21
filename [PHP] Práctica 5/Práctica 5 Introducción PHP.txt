@@ -1,0 +1,276 @@
+﻿Ejercicio 1
+En el siguiente código identificar: 
+* las variables y su tipo 
+* los operadores
+* las funciones y sus parámetros
+* las estructuras de control
+* cuál es la salida por pantalla
+
+
+
+
+<?php
+function doble($i) {
+return $i*2;
+}
+$a = TRUE;
+$b = "xyz";
+$c = 'xyz';
+$d = 12;
+echo gettype($a);
+echo gettype($b);
+echo gettype($c);
+echo gettype($d);
+if (is_int($d)) {
+$d += 4;
+}
+if (is_string($a)) {
+echo "Cadena: $a";
+}
+$d = $a ?[a] ++$d[b] : $d*3;[c]
+$f = doble($d++);
+$g = $f += 10;
+echo $a, $b, $c, $d, $f , $g;
+?>
+	* Variables y tipos:
+$a variable de tipo booleano
+$b variable de tipo string
+$c variable de tipo string
+$d variable de tipo integer
+
+
+* Operadores: Casi al final del código se presentan algunos operadores, como por ejemplo:
+   * Operador Unario: Opera sobre un único valor. El ++ es un ejemplo, y sirve para incrementar el valor.
+   * Operador Binario: La suma o la multiplicación son ejemplos de esto.
+   * Operador Ternario. La primera operación que aparece es un operador ternario (?).
+* Funciones y parámetros: La función se llama doble, le entra como parámetro la variable “ i “ y la función te devuelve la variable “ i “ de la entrada multiplicada por 2
+* Estructuras de control: Existen dos estructuras de control, ambas son un if. El primero comprueba que la variable $d sea integer y, si lo es, le suma 4 a su valor; el segundo comprueba que la variable $a sea string y, si lo es, la muestra en pantalla.
+* Salida por pantalla:
+con los echo gettype nos muestra el tipo de la variable que le enviamos como parámetro. En este caso veríamos los tipos de las variables a, b, c y d
+como a es verdadero lo que hace es aumentar el valor de $d en 1 $f toma el valor de 34 ya que es el resultado de sumarle 1 a 2 y hacerle el doble y $g se mostraría como 44 ya que es el resultado de aumentarle 10 a $f
+	
+
+
+
+Ejercicio 2
+Indicar si los siguientes códigos son equivalentes:
+a) 
+  
+
+En el primero se muestra el valor de la variable que es “ 1 “ y luego se le suma 1, en la siguiente vez se mostrará “ 2 “ y así sucesivamente hasta que llegue a 10 se muestra por última vez y la variable queda en el valor “ 11 “ cortando el while.
+El segundo caso es exactamente igual al primero nada más que se está declarando de una forma distinta, en vez de utilizar llaves {} se utiliza un : y un endwhile; 
+El tercer caso podemos apreciar que es un do while, se utiliza otra estructura de control, pero el resultado es el mismo, mostrará del 1 al 10 y luego cuando llegue a 10 cortará, quedando la variable en el número 10.
+b)
+  
+
+En primer código horizontal podemos apreciar un for común, donde la variable $i se inicializa en 1 y se va sumando 1 mientras la condición de que sea menor o igual a 10 y luego se muestra el número, como resultado vemos la enumeración del 1 al 10
+En el segundo código horizontal podemos ver el for de una manera un poco rara, donde la acción está dentro de la declaración de la estructura de control y lo que hace es mostrarnos la enumeración del 1 al 10, así que sería equivalente a su anterior.
+En el tercer caso podemos ver que tenemos la condición adentro de un if de que sea menor a 10, y cuando llegue 10 el break va a finalizar el bucle mostrando lo mismo que en los anteriores.
+En el cuarto caso vemos que inicializamos el for de la forma “for (;;)” lo cual indica que es un bucle infinito, o sea que depende de la estructura de control “if” y su break que contiene adentro para cortar de la misma forma que el anterior cuando llegue a 10, mostrando exactamente lo mismo que los 3 anteriores. La inicialización se realiza antes del for, la condición se presenta en el if, y la variable se suma al final de la estructura.
+
+
+c)
+  
+
+Las 2 son iguales, pero cuando se tienen que evaluar varias condiciones para una misma variable utilizar una estructura de control case es la mejor práctica, ya que es más fácil de leer y actualizar en el futuro.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ejercicio 3
+Explicar para qué se utiliza el siguiente código:
+
+
+a)
+<html>
+<head><title>Documento 1</title></head>
+<body>
+<?php
+echo "<table width = 90% border = '1' >";
+$row = 5;
+$col = 2;
+for ($r = 1; $r <= $row; $r++) {
+echo "<tr>";
+for ($c = 1; $c <= $col;$c++) {
+echo "<td>&nbsp;</td>\n";
+} echo "</tr>\n";
+}
+echo "</table>\n";
+?>
+</body></html>
+	Es un documento html que tiene un script de PHP adentro declarado, en el cual podemos ver lo siguiente, nos muestra una tabla con un ancho del 90% de la página y con borde de 1px.
+Declaramos una variable $row con valor 5 y una variable $col con valor 2, después con una estructura de control “for” inicializamos una variable $r en 1 y mientras sea menor que el número de la variable $row va a aumentar en 1 el valor de la variable $r y va a mostrar 1 fila, luego adentro del mismo for va a hacer otro “for” donde declara la variable $c en la cual la inicializa en 1 y le suma 1 mientras que su valor sea menor o igual al valor de $col, mostrando una columna con un espacio en blanco y agregando un salto de línea al final de cada una.
+Luego muestra la tabla con un salto de línea debajo de ella
+
+
+	
+
+b)
+
+
+
+
+<html>
+<head><title>Documento 2</title></head>
+<body>
+<?php
+if (!isset($_POST['submit'])) {
+?>
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+Edad: <input name="age" size="2">
+<input type="submit" name="submit" value="Ir">
+</form>
+<?php
+}
+else {
+$age = $_POST['age'];
+if ($age >= 21) {
+echo 'Mayor de edad';
+}
+else {
+echo 'Menor de edad';
+}
+}
+?>
+</body></html>
+	Este código muestra un formulario en el que se ingresa la edad de un usuario. Si el formulario no fue enviado (estructura de control “if (!isset($_POST['submit']))”, el mismo se mostrará en pantalla. Si ya fue enviado, en el else, se verifica que la edad sea mayor o igual a 21 años: Si es mayor o igual, muestra en pantalla el texto “Mayor de edad”; si no, muestra “Menor de edad”.
+En síntesis, verifica la mayoría de edad del usuario.
+	
+
+Ejercicio 4
+La salida que produce el código es:  
+“El 
+El clavel blanco”
+En la primer línea de código, al no incluir el archivo datos.php no podemos obtener los valores de $flor y $color, por lo tanto no mostrará los valores de dichas variables “clavel blanco” y mostrará “El   “
+ya que las variables si no tienen valor se muestran como cadenas vacías.
+Luego de la inclusión de datos.php, los valores de las variables $flor y $color ya son conocidos, por lo que podrá mostrarse correctamente la salida en pantalla como “El clavel blanco”.
+
+
+________________
+
+
+Ejercicio 5
+Analizar el siguiente ejemplo: Contador de visitas a una página web
+  
+
+  
+
+
+
+
+
+PHP: arrays, funciones
+Ejercicio 1
+Indicar si los siguientes códigos son equivalentes.
+  
+
+En el primer caso se declara un arreglo en el cual tiene 4 variables y a cada una le corresponde un valor determinado, a la primera variable que es “color” es rojo a “sabor” es dulce, a “forma” es redonda y a “nombre” es manzana, al final se indica con un 4 el tamaño del arreglo.
+En el segundo caso, si bien el resultado es el mismo (los códigos son equivalentes), el array se declara de forma diferente, y por cada línea se declaran sus elementos con sus respectivos valores. En la última línea, se establece que la longitud del arreglo será de 4.
+
+
+Ejercicio 2
+En cada caso, indicar las salidas correspondientes
+a)
+  
+
+La salida es:
+bar
+1
+b)
+  
+
+La salida es
+5
+9
+42
+c)
+  
+
+En este caso, no hay una salida en pantalla. En la primera línea se declara una variable de que es un arreglo de dos elementos (la clave 5 tiene valor 1 y la clave 12 tiene valor 2).
+En la segunda, se agrega un nuevo elemento al final del arreglo (clave 13 debido a que le sigue a 12 y valor 56). En la tercera, se agrega un 4to elemento de clave x con valor 42. Por último, los “unset” eliminan los elementos de la matriz: el primero elimina el elemento de clave 5 y valor 1, y el segundo elimina la matriz completa.
+
+
+
+
+
+
+Ejercicio 3
+En cada caso indicar las salidas correspondientes
+a)
+  
+
+La salida es:
+“Has entrado en esta página a las (hora actual del sistema) horas, con (minutos actuales del sistema) minutos y (segundos actuales del sistema) segundos, del (dia actual/mes actual/año actual)
+b)
+  
+
+En este caso, la función recibe dos parámetros: $sumando1, y $sumando2.
+Dentro de la función, se declara una nueva variable $suma que realiza la suma entre ambos parámetros. Por último, se muestra una salida en pantalla con la operación y su resultado. En este caso, al ser los parámetros recibidos 5 y 6, la salida es:
+“5+6=11”
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ejercicio 4
+Analizar la siguiente función, y escribir un script para probar su funcionamiento:
+  
+
+
+
+comprobar_nombre_usuario(pablito_cravero)
+Muestra en pantalla “pablito_cravero es válido” y luego un salto de línea. La función devuelve true.
+
+
+[a]pregunta si true o false
+[b]if
+[c]else
