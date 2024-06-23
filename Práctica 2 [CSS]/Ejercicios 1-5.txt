@@ -1,0 +1,263 @@
+Ejercitación 1 - Responder
+
+1. ¿ Qué es CSS y para qué se usa?
+CSS son las siglas de Cascade Style Sheet que traducido significa hojas de estilo en cascada. Las hojas de estilo son una tecnología que nos permite controlar la apariencia de una página web.
+CSS se utiliza para dar estilo a documentos HTML y XML, separando el contenido de la presentación. Los Estilos definen la forma de mostrar los elementos HTML y XML. CSS permite a los desarrolladores Web controlar el estilo y el formato de múltiples páginas Web al mismo tiempo. Cualquier cambio en el estilo marcado para un elemento en la CSS afectará a todas las páginas vinculadas a esa CSS en las que aparezca ese elemento.
+
+
+2. CSS utiliza reglas para las declaraciones de estilo, ¿cómo funcionan?
+Un juego de reglas (también llamado "regla") consiste de un selector seguido de un bloque de declaraciones. Un bloque de declaraciones (también llamado bloque-{} en el siguiente texto) comienza con una llave izquierda ({) y termina con la llave derecha (}) correspondiente. En medio de ellas debe haber una lista de cero o más declaraciones separadas por punto y coma (;).
+El selector, consiste en todo lo que hay hasta (pero sin incluir) la primera llave izquierda ({). Un selector siempre va junto con un bloque-{}. Cuando una aplicación del usuario no puede analizar el selector (es decir, no es un CSS2 válido), debe ignorar también el bloque-{}.
+Una declaración puede ser vacía o consistir en una propiedad, seguida por dos puntos (:), seguidos por un valor. Alrededor de cada uno de estos pueden haber espacios en blanco.Debido a la manera en que trabajan los selectores, las declaraciones múltiples para el mismo selector pueden organizarse en grupos separados por punto y coma (;).
+
+De este modo las siguientes reglas:
+
+
+
+
+
+Equivalen a:
+
+
+
+
+
+
+3. ¿ Cuáles son las tres formas de dar estilo a un documento?
+Las tres formas de dar estilo a un documento son:
+Utilizando una hoja de estilo externa que estará vinculada a un documento a través del elemento <link>, que debe situarse en la sección <head>.
+Utilizando el elemento <style> en el interior del documento al que se le quiere dar estilo, y que generalmente se situaría en la sección <head>.
+Utilizando estilos directamente sobre los elementos que lo permiten a través del atributo <style> dentro del <body>. Este tipo de estilo pierde las ventajas que ofrecen las hojas de estilo debido a que se mezcla el contenido con la presentación.
+
+
+4. ¿ Cuáles son los distintos tipos de selectores más utilizados? Ejemplifique cada uno.
+Los selectores CSS son herramientas clave para seleccionar y aplicar estilos a elementos HTML.
+Selector de tipo: Este selector selecciona elementos basados en su tipo
+p {
+	color: blue;
+}
+Selector de clase: Este selector selecciona elementos basados en su atributo de clase.
+.boton {
+	background-color: #FFFFF;
+	color: black;
+}
+Selector de atributo: Este selector permite seleccionar elementos basados en los valores de sus atributos
+a[target] {
+	color: red;
+}
+Selector descendente: Este selector selecciona elementos que son descendientes de otro elemento.
+.contenedor p {
+	margin: 10px;
+}
+Selector first-child: Este selector selecciona elementos que son hijos directos de otro elemento.
+ul > li {
+	list-style-type: none;
+}
+Selector de ID: Este selector selecciona un elemento basado en su atributo de ID. Aunque los ID son únicos en un documento HTML, este selector es menos común debido a su baja reutilización y especificidad.
+#encabezado {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+5. ¿ Qué es una pseudo-clase? ¿Cuáles son las más utilizadas aplicadas a vínculos?
+Las pseudo-clases clasifican a los elementos basado en características más allá de su nombre, atributos o contenido; en principio, atributos que no pueden deducirse de la estructura del documento. Las pseudo-clases pueden ser dinámicas, en el sentido de que un elemento puede adquirir o perder una pseudo-clase a medida que el usuario interactúa con el documento. La excepción es ':first-child', que puede deducirse de la estructura del documento.
+Las más utilizadas aplicadas a vínculos son las pseudo-clases vínculo :link y :visited.
+
+Las aplicaciones del usuario normalmente muestran los vínculos no visitados de un modo diferenciado de aquellos previamente visitados. CSS proporciona las pseudo-clases ':link' y ':visited' para distinguirlos:
+La pseudo-clase :link se aplica a los vínculos que aún no han sido visitados.
+La pseudo-clase :visited se aplica una vez que el vínculo ha sido visitado por el usuario.
+La pseudo-clase :hover se aplica a vínculos cuando el cursor pasa sobre ellos.
+Por último, :active se aplica al clickear un vínculo.
+
+6. ¿ Qué es la herencia?
+Algunos valores son heredados por los hijos de un elemento en la estructura del documento. Cada propiedad define si se hereda o no. 
+La herencia se refiere a la capacidad de un elemento para heredar propiedades de estilo de sus elementos contenedores o padre. Si un elemento HTML está contenido dentro de otro, puede heredar los estilos de ese elemento contenedor si no se especifican propios estilos de manera explícita. sí, los estilos se propagan a los elementos hijos.
+
+7. ¿ En qué consiste el proceso denominado cascada?
+Las hojas de estilo pueden tener tres orígenes diferentes: el autor, el usuario y la aplicación del usuario.
+Autor: Especifica las hojas de estilo para un documento fuente de acuerdo a las convenciones del lenguaje del documento.
+Usuario: Puede especificar información de estilo para un documento particular.
+Aplicaciones del usuario: Deben aplicar una hoja de estilo predeterminada previa a todas las hojas de estilo para un documento. Esta hoja de estilo predeterminada debe presentar los elementos del lenguaje de documento de modo que satisfaga las expectativas generales de presentación del lenguaje del documento, y puede cambiar si las opciones del sistema son modificadas por el usuario.
+La cascada de CSS asigna una fuerza a cada regla de estilo. Cuando varias reglas se aplican, la de mayor fuerza toma preponderancia. 
+De forma predefinida, las reglas en las hojas de estilo del autor tienen más fuerza que las reglas en las hojas de estilo del usuario. Con las reglas “!important”, esto se revierte. Todas las reglas que el usuario y autor especifican tienen mayor fuerza que las reglas de la hoja de estilo predeterminada en la aplicación de usuario.
+Las hojas de estilo importadas también forman la cascada y su fuerza depende del orden en la importación. Las reglas especificadas en una hoja de estilo dada sustituyen las reglas importadas desde otras hojas de estilo. Las hojas de estilo importadas pueden a su vez importar y sustituir otras hojas de estilo, recursivamente, y se aplican las mismas reglas de preponderancia.
+
+Ejercitación 2
+
+Analizar el siguiente código señalando declaraciones y aplicaciones de reglas, y su efecto.
+
+p#normal {
+font-family: arial,helvetica;
+font-size: 11px;
+font-weight: bold;
+}
+Lo primero es que se van a aplicar a cualquier elemento <p> que tenga el atributo id “normal”.
+font-family: arial,helvetica; | Define la familia de fuentes que se van a aplicar, como primera opción está arial, sino utilizará helvetica en su defecto
+font-size: 11px; | Define el tamaño de la fuente
+font-weight: bold; | Hace que sea en negrita la fuente
+
+*#destacado {
+border-style: solid;
+border-color: blue;
+border-width: 2px;
+}
+En esta sección del css, el *#destacado nos indica que los estilos se aplicarán a todos los elementos cuyo id sea “destacado” (en este caso, al elemento <p>Este es otro Párrafo </p> y al elemento <table>). De este modo, el border-style: solid y el border-color: blue harán que estos elementos tengan un borde continuo de color azul. El border-width, por otra parte, establece el ancho del borde de los elementos. Sin embargo, podría haber errores debido a que varios elementos poseen el mismo id, lo que es una mala práctica.
+
+#distinto {
+background-color: #9EC7EB;
+color: red;
+}
+Esta se va a aplicar a cualquier elemento <p> que tenga el atributo “distinto” como id.
+background-color: #9EC7EB; | el color del fondo va a ser Celeste
+color: red; | El color de la letra va a ser rojo
+
+<p id="normal">Este es un párrafo</p>
+<p id="destacado">Este es otro párrafo</p>
+<table id="destacado"><tr><td>Esta es una tabla</td></tr></table>
+<p id="distinto">Este es el último párrafo</p>
+
+
+
+
+
+Ejercitación 3
+Analizar el siguiente código señalando declaraciones y aplicaciones de reglas, y su efecto.
+
+p.quitar {
+color: red;
+}
+Esta parte del css aplicará el color rojo a la letra de las clases “quitar” del html cuyo elemento sea un <p> (por esto el h1 no está en rojo). Esta clase tiene un elemento hijo que hereda el estilo, por lo que también será rojo.
+
+*.desarrollo {
+font-size: 8px;
+}
+A las clases llamadas “desarrollo”, se les aplicará un tamaño de letra de 8px. Si analizamos visualmente el resultado, vemos que esta letra es mucho más pequeña que la de los párrafos de las otras clases.
+
+.importante {
+font-size: 20px;
+}
+A las clases “importante” del html, se le aplicará un tamaño de letra de 20 px. Visualmente, es un tamaño mayor al general.
+
+Es importante destacar la clase de html “quitar importante”. Al tener la clase “quitar” un estilo asignado (color rojo), y la clase “importante” otro estilo (tamaño de letra 20 px), estos dos estilos se combinan, generando un texto rojo de tamaño 20 px.
+
+<p class="desarrollo">
+En este primer párrafo trataremos lo siguiente:
+<br />xxxxxxxxxxxxxxxxxxxxxxxxx
+</p>
+<p class="quitar">
+Este párrafo debe ser quitado de la obra…
+<br />xxxxxxxxxxxxxxxxxxxxxxxxx
+</p>
+<p >
+En este otro párrafo trataremos otro tema:<br />
+xxxxxxxxxxxxxxxxxxxxxxxxx
+</p>
+<p class="importante">
+Y este es el párrafo más importante de la obra…
+<br />xxxxxxxxxxxxxxxxxxxxxxxxx
+</ p>
+<h1 class="quitar">Este encabezado también debe ser quitado de la obra</h1>
+<p class="quitar importante">Se pueden aplicar varias clases a la vez</p>
+
+
+
+
+
+
+
+
+Ejercitación 4
+Dadas las siguientes declaraciones:
+* {color:green; }
+a:link {color:gray }
+a:visited{color:blue }
+a:hover {color:fuchsia }
+a:active {color:red }
+p {font-family: arial,helvetica;font-size: 10px;color:black; }
+.contenido{font-size: 14px;font-weight: bold; }
+Analizar los siguientes códigos y comparar sus efectos. Explicar:
+
+<body>
+<p class="contenido" style="font-weight: normal;">
+Este es un texto ...............</p>
+<table>
+<tr>
+<td>Y esta es una tabla.......</td>
+</tr>
+<tr>
+<td><a href="http://www.google.com.ar">con un
+enlace</a></td>
+</tr>
+</table>
+</body>
+<body class="contenido">
+<p> Este es un texto................</p>
+<table>
+<tr>
+<td>Y esta es una tabla.......</td>
+</tr>
+<tr>
+<td><a href="http://www.google.com.ar">con
+un enlace</a></td>
+</tr>
+</table>
+</body>
+
+
+En este caso, el primer párrafo se muestra en fuente normal arial (helvética como alternativa), con un tamaño de 14px y en color negro. Esto quiere decir que se toma como prioridad lo establecido en el html (font-weight: normal) antes que el contenido (que busca que se use font-weight: bold). A su vez, podemos ver que se prioriza la clase antes que el elemento (pues se usa el font-size: 14px establecido en .contenido y no el de 10px establecido en p). El último elemento en la prioridad es la p, que establece el tipo y color de letra.
+La tabla, por otra parte, se muestra en color verde debido a que en el css se establece que todo debe ser verde (*). Podemos ver que esto no sucede en el párrafo, que tiene prioridad sobre esta aplicación general.
+La clase a del link va a ser de color fucsia cuando se le pase por encima (:hover) con el mouse, azul cuando el link ya haya sido visitado (:visited), si no lo fue será gris (:link) y cuando se presione será rojo (:active).
+Como tamaño de fuente por defecto van a tener todos 14px y será todo en negrita, ya que el body se llama contenido.
+La clase a del link va a ser de color fucsia cuando se le pase por encima con el mouse, azul cuando el link ya haya sido visitado y cuando se presione será rojo. Por defecto se mostrará en gris.
+El párrafo como está afectado por otra regla se superpone a lo previamente definido y su fuente será arial o en su defecto helvética y su tamaño de fuente será 10 píxeles, con su color en negro.
+El * nos indica que para todo se aplicará que sea de color verde, pero como la tabla al ser el único elemento que no tiene nada declarado ni ningún cambio de color es lo único que se muestra en verde.
+
+
+Ejercitación 5
+En cada caso, declarar una regla CSS que produzca el siguiente efecto:
+
+1. Los textos enfatizados dentro de cualquier título deben ser rojos.
+h1 {
+	color: red
+}
+2. Cualquier elemento que tenga asignado el atributo "href" y que esté dentro de cualquier párrafo que a su vez esté dentro de un bloque debe ser color negro.
+div p a {
+	color: black
+}
+3. El texto de las listas no ordenadas que estén dentro del bloque identificado como “último” debe ser amarillo pero si es un enlace a otra página debe ser azul.
+div#ultimo ul {
+	color: yellow
+}
+
+div#ultimo ul a {
+	color: blue 
+}
+
+4. Los elementos identificados como “importante” dentro de cualquier bloque deben ser verdes, pero sí están dentro de un título deben ser rojos.
+div#importante{
+	color:green
+}
+
+div#importante h1 {
+	color: red
+}
+
+5. Todos los elementos h1 que especifique el atributo title, cualquiera que sea su valor, deben ser azules.
+
+h1 title {
+	color: blue
+}
+
+6. El color de los enlaces en las listas ordenadas debe ser azul para los enlaces aún no visitados, y violeta para los ya visitados y, además, no deben aparecer subrayados.
+ol a:link {
+	color: blue
+}
+
+
+ol a:visited {
+	color: purple
+}
+
+ol a {
+	text-decoration: none
+}

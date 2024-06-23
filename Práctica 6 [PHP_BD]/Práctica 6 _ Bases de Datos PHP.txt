@@ -1,0 +1,32 @@
+﻿Práctica 6: Manejo de Bases de Datos con PHP
+Ejercicio 1:
+Consulta a una base de datos: Para comenzar la comunicación con un servidor de base de datos MySQL, es necesario abrir una conexión a ese servidor. Para inicializar esta conexión, PHP ofrece la función mysqli_connect(mysql_connect). Todos sus parámetros son opcionales, pero hay tres de ellos que generalmente son necesarios: $hostname, $nombreUsuario, $contraseña. Una vez abierta la conexión, se debe seleccionar una base de datos para su uso, mediante la función mysqli_select_db(mysql_select_db). Esta función debe pasar como parámetro el nombre de la conexión y el de la base de datos. La función mysqli_query () se utiliza para ejecutar una consulta de SQL a la Base de Datos especificada, y requiere como parámetros el nombre de la conexión, y la query. La cláusula or die() se utiliza para capturar el error[a], y la función mysqli_error () se puede usar para devolver el último mensaje de error para la llamada más reciente a una función mysqli que puede haberse ejecutado correctamente o fallado.
+Si la función mysqli_query() es exitosa, el conjunto resultante retornado se almacena en una variable, por ejemplo $vResult, y a continuación se puede ejecutar el siguiente código.
+Explicación Código:
+
+
+<?php
+while ($fila = mysqli_fetch_array($vResult))
+{
+?>
+<tr>
+ <td><?php echo ($fila[0]); ?></td>
+ <td><?php echo ($fila[1]); ?></td>
+ <td><?php echo ($fila[2']); ?></td>
+</tr>
+<tr>
+ <td colspan="5">
+<?php
+}
+mysqli_free_result($vResult);
+mysqli_close($link);
+?>
+	Con la función “mysqli_fetch_array($vResult)”, obtenemos la siguiente fila del resultado como un array asociativo. Así, ejecutamos el bucle hasta que no queden más filas. 
+Los “php echo ($fila[i])” sirven para mostrar los elementos de la filas.
+Con la función “mysqli_free_result(...)”[b], se libera la memoria asociada con el resultado. Finalmente, se cierra la conexión con la base de datos.
+	
+
+
+
+[a]Agregar al resumen
+[b]Agregar a resumen
