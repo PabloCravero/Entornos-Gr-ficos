@@ -1,0 +1,47 @@
+.carousel-item img {
+  max-width: 100%;
+  max-height: 500px; /* Aumenta la altura máxima */
+  width: auto;
+  height: auto;
+  object-fit: contain; /* Cambia a contain para ajustar las imágenes completas */
+}
+.carousel-control-prev,
+.carousel-control-next {
+  border-style: none;
+  border-color: transparent;
+  background-color: black;
+  max-width: 100px;
+}
+h5,
+p {
+  color: black;
+}
+body {
+  background-color: #f8f9fa;
+}
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+}
+.card {
+  border-style: solid;
+  border-color: black;
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.card-text {
+  margin-bottom: 1rem;
+}
+.btn-primary {
+  background-color: #6a11cb;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #4c057e;
+}
