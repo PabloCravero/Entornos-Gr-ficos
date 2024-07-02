@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./main.css">
+  <title>Parcial Práctica</title>
+</head>
+
+<body>
+  <h1 class="welcome">
+    Bienvenido al Sitio Web
+  </h1>
+  <form action="main.php" method="POST" name="form_alta">
+    <table>
+      <tr>
+        <td>Nombre: </td>
+        <td><input type="text" name="nombre"></td>
+      </tr>
+      <tr>
+        <td>Email: </td>
+        <td><input type="text" name="email"></td>
+      </tr>
+      <tr>
+        <td>Nombre del producto: </td>
+        <td><input type="text" name="producto"></td>
+      </tr>
+      <tr>
+        <td>Mes: </td>
+        <td><input type="date" name="mes"></td>
+      </tr>
+      <tr>
+        <td>Cantidad: </td>
+        <td><input type="number" name="cantidad"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="terminos" id="terminos" value="aceptado">Acepto términos y condiciones</td>
+      </tr>
+      <tr>
+        <td><input type="submit" value="Aceptar"></td></tr>
+    </table>
+  </form>
+</body>
+</html>

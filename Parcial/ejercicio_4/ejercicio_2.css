@@ -1,0 +1,16 @@
+.break{
+  color: grey;
+  margin-top: 10px;
+}
+
+.tabla{
+  justify-content: center;
+  align-content: center;
+  border-style: solid;
+  border-color: lightgray;
+}
+
+.texto{
+  font-size: x-large;
+
+}

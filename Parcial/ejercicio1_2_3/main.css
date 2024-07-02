@@ -1,0 +1,19 @@
+body{
+  color: black;
+  background-color: lightgray;
+}
+
+a{
+  color: blue;
+}
+
+a:hover {
+  color: yellow;
+}
+
+.formulario{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-content: flex-end;
+}

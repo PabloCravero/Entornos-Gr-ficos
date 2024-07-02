@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi CV</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .profile-img {
+      background-color: #f0f0f0;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner-green {
+      background-color: #d4edda;
+      height: 100%;
+    }
+
+    .contact-info {
+      background-color: #f8f9fa;
+    }
+
+    .full-height {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .content {
+      flex: 1;
+    }
+
+    .contact-section {
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mt-3 full-height">
+    <div class="row mt-3">
+      <div class="col-md-9">
+        <div class="bg-secondary text-white p-2 d-flex align-items-center">
+          MI CV
+          <div class="ml-auto">
+            <a href="#" class="mr-2"><img src="./2023_Facebook_icon.svg" alt="Facebook" style="height: 20px;width: 20px;"></a>
+            <a href="#" class="mr-2"><img src="./images.png" alt="Twitter"  style="height: 20px;width: 20px;"></a>
+            <a href="#"><img src="./linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.webp" alt="LinkedIn" style="height: 20px;width: 20px;"></a>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-md-6">
+            <div class="bg-light p-2 mb-2">Juan Nicolás Perez</div>
+            <div class="contact-info p-2 mb-2" style="height: 200px;">Datos de contacto</div>
+          </div>
+          <div class="col-md-6">
+            <div class="profile-img mb-2" style="height: 100%">
+              <img src="https://via.placeholder.com/150" alt="Profile Picture">
+            </div>
+          </div>
+        </div>
+        <div class="bg-light p-2 mt-2">Contacto
+          <form class="p-2 contact-section">
+            <div class="form-group row">
+              <div class="col-md-6">
+                <label for="name">Nombre</label>
+                <input type="text" class="form-control" id="name" placeholder="Nombre">
+              </div>
+              <div class="col-md-6">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Email">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="comment">Comentario</label>
+              <textarea class="form-control" id="comment" rows="3" placeholder="Comentario"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="banner-green"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
